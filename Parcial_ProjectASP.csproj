@@ -70,6 +70,7 @@
     <Content Include="Web.config" />
     <Content Include="index.aspx" />
     <Content Include="registro.aspx" />
+    <Content Include="recuperar_contraseña.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -86,6 +87,13 @@
     </Compile>
     <Compile Include="registro.aspx.designer.cs">
       <DependentUpon>registro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="recuperar_contraseña.aspx.cs">
+      <DependentUpon>recuperar_contraseña.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="recuperar_contraseña.aspx.designer.cs">
+      <DependentUpon>recuperar_contraseña.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

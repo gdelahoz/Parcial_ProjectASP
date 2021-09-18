@@ -40,22 +40,25 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="WebForm1.aspx">Tienda</a>
+              <a class="nav-link active" aria-current="page" href="tienda.aspx">Tienda</a>
+            </li>
+              <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="company.aspx">Compañia</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Carrito.aspx">Carrito</a>
+              <a class="nav-link" href="carrito.aspx">Carrito y facturación</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-    <section class="d-flex justify-content-center align-items-center vh-100 container">
+    <section class="d-flex justify-content-center align-items-center py-4 container">
         <div class="card col-12 col-md-4">
             <div class="card-header p-4">
                 <asp:Label ID="lblHeader" runat="server" Text="Productos" CssClass="h3"></asp:Label>
             </div>
             <div class="card-body p-4">
-                <form id="form1" runat="server">
+                <form id="form1" runat="server" class="img-fluid">
                     <h5 class="mb-2">Libros</h5>
                     <p>Puedes comprar el siguiente libro</p>
                     <asp:Button ID="btnSubmit" runat="server" Text="Comprar" CssClass="btn btn-primary mb-4 btn-block" OnClick="btnSubmit_Click"/>

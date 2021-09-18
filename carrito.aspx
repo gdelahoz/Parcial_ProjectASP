@@ -42,23 +42,137 @@
             <li class="nav-item">
               <a class="nav-link" aria-current="page" href="tienda.aspx">Tienda</a>
             </li>
+              <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="company.aspx">Compañia</a>
+            </li>
             <li class="nav-item">
-              <a class="nav-link active" href="carrito.aspx">Carrito</a>
+              <a class="nav-link active" href="carrito.aspx">Carrito y facturación</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-    <section class="d-flex justify-content-center align-items-center vh-100 container">
-        <div class="card col-12 col-md-4">
-            <div class="card-header p-4">
-                <asp:Label ID="lblHeader" runat="server" Text="Productos" CssClass="h3"></asp:Label>
-            </div>
+    <section class="d-flex justify-content-center align-items-center py-4 container">
+        <div class="card col-12 col-md-9">
             <div class="card-body p-4">
                 <form id="form1" runat="server">
                     <h5 class="mb-2">Factura</h5>
-                    <p>Puedes comprar el siguiente libro</p>
-                    <asp:Button ID="btnSubmit" runat="server" Text="Comprar" CssClass="btn btn-primary mb-4 btn-block"/>
+                    <p>Ingrese la información del cliente y de la factura</p>
+                    <div class="row">
+                        <div class="col-12 col-md-8">
+                            <div class="row">
+                                <div class="col">
+                                    <!-- Nombre de compañía -->
+                                    <div class="form-outline">
+                                        <asp:TextBox ID="txtName" runat="server" CssClass="form-control"></asp:TextBox>
+                                        <asp:Label ID="Label3" runat="server" Text="Label" CssClass="form-label px-1" style="z-index: 3;background: white;padding-top: 0px;margin-top: 5px;">Nombre de la compañía</asp:Label>
+                                    </div>
+                                    <p class="mb-0" style="font-size: 12px;">
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtName" ErrorMessage="Campo requerido" ForeColor="Red"></asp:RequiredFieldValidator>
+                                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtName" ErrorMessage="Solo se permiten letras." ForeColor="Red" ValidationExpression="[A-Za-z ]*"></asp:RegularExpressionValidator>
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <!-- Correo  -->
+                                    <div class="form-outline">
+                                        <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" TextMode="Email"></asp:TextBox>
+                                        <asp:Label ID="Label2" runat="server" Text="Label" CssClass="form-label px-1" style="z-index: 3;background: white;padding-top: 0px;margin-top: 5px;">Correo electronico</asp:Label>
+                                    </div>
+                                    <p style="font-size: 12px;">
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtEmail" ErrorMessage="Campo requerido" ForeColor="Red"></asp:RequiredFieldValidator>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Dirección -->
+                            <div class="form-outline">
+                                <asp:TextBox ID="txtDir" runat="server" CssClass="form-control"></asp:TextBox>
+                                <asp:Label ID="Label1" runat="server" Text="Label" CssClass="form-label px-1" style="z-index: 3;background: white;padding-top: 0px;margin-top: 5px;">Dirección</asp:Label>
+                            </div>
+                            <p style="font-size: 12px;">
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtDir" ErrorMessage="Campo requerido" ForeColor="Red"></asp:RequiredFieldValidator>
+                            </p>
+
+                            <div class="row">
+                                <div class="col">
+                                    <!-- Ciudad -->
+                                    <div class="form-outline">
+                                        <asp:TextBox ID="txtCity" runat="server" CssClass="form-control"></asp:TextBox>
+                                        <asp:Label ID="Label4" runat="server" Text="Label" CssClass="form-label px-1" style="z-index: 3;background: white;padding-top: 0px;margin-top: 5px;">Ciudad</asp:Label>
+                                    </div>
+                                    <p style="font-size: 12px;">
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtCity" ErrorMessage="Campo requerido" ForeColor="Red"></asp:RequiredFieldValidator>
+                                        <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="txtCity" ErrorMessage="Solo se permiten letras." ForeColor="Red" ValidationExpression="[A-Za-z ]*"></asp:RegularExpressionValidator>
+                                    </p>
+
+                                    <!-- Pais de origen -->
+                                    <asp:DropDownList ID="DropDownList1" runat="server" CssClass="bg-white form-select p-1">
+                                        <asp:listitem text="País" value="default"></asp:listitem>
+                                        <asp:listitem text="Colombia" value="Colombia"></asp:listitem>
+                                        <asp:listitem text="Venezuela" value="Venezuela"></asp:listitem>
+                                        <asp:listitem text="Argentina" value="Argentina"></asp:listitem>
+                                        <asp:listitem text="Ecuador" value="Ecuador"></asp:listitem>
+                                        <asp:listitem text="Otros" value="Otros"></asp:listitem>
+                                    </asp:DropDownList>
+                                    <p style="font-size: 12px;">
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="DropDownList1" ErrorMessage="Campo obligatorio" ForeColor="Red"></asp:RequiredFieldValidator>
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <!-- Codigo postal -->
+                                    <div class="form-outline">
+                                        <asp:TextBox ID="txtZIP" runat="server" CssClass="form-control" TextMode="Number"></asp:TextBox>
+                                        <asp:Label ID="Label8" runat="server" Text="Label" CssClass="form-label px-1" style="z-index: 3;background: white;padding-top: 0px;margin-top: 5px;">Codigo postal</asp:Label>
+                                    </div>
+                                    <p style="font-size: 12px;">
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="txtZIP" ErrorMessage="Campo requerido" ForeColor="Red"></asp:RequiredFieldValidator>
+                                        <asp:CustomValidator ID="CustomValidator1" runat="server" ControlToValidate="txtZIP" ErrorMessage="Debe ser múltiplo de 5" ForeColor="Red" OnServerValidate="CustomValidator1_ServerValidate">Debe ser multiplo de 5</asp:CustomValidator>
+                                    </p>
+
+                                    <!-- Provincia -->
+                                    <div class="form-outline">
+                                        <asp:TextBox ID="txtProv" runat="server" CssClass="form-control"></asp:TextBox>
+                                        <asp:Label ID="Label7" runat="server" Text="Label" CssClass="form-label px-1" style="z-index: 3;background: white;padding-top: 0px;margin-top: 5px;">Provincia</asp:Label>
+                                    </div>
+                                    <p style="font-size: 12px;">
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="txtProv" ErrorMessage="Campo requerido" ForeColor="Red"></asp:RequiredFieldValidator>
+                                        <asp:RegularExpressionValidator ID="RegularExpressionValidator9" runat="server" ControlToValidate="txtProv" ErrorMessage="Solo se permiten letras." ForeColor="Red" ValidationExpression="[A-Za-z ]*"></asp:RegularExpressionValidator>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <!-- Numero de factura -->
+                            <div class="form-outline">
+                                <asp:TextBox ID="txtNFact" runat="server" CssClass="form-control" TextMode="Number"></asp:TextBox>
+                                <asp:Label ID="Label5" runat="server" Text="Label" CssClass="form-label px-1" style="z-index: 3;background: white;padding-top: 0px;margin-top: 5px;">Número de factura</asp:Label>
+                            </div>
+                            <p style="font-size: 12px;">
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ControlToValidate="txtNFact" ErrorMessage="Campo requerido" ForeColor="Red"></asp:RequiredFieldValidator>
+                            </p>
+
+                            <!-- Fecha -->
+                            <div class="form-outline">
+                                <asp:TextBox ID="txtDate" runat="server" CssClass="bg-light form-control" TextMode="Date"></asp:TextBox>
+                            </div>
+                            <p style="font-size: 12px;">
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" ControlToValidate="txtDate" ErrorMessage="Campo requerido" ForeColor="Red"></asp:RequiredFieldValidator>
+                            </p>
+                        </div>
+                    </div>
+                    <script
+                      type="text/javascript"
+                      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js"
+                    ></script>
+                    <script>
+                        document.querySelectorAll('.form-outline').forEach((formOutline) => {
+                            new mdb.Input(formOutline).init();
+                        });
+                        document.querySelectorAll('.form-outline').forEach((formOutline) => {
+                            new mdb.Input(formOutline).update();
+                        });
+                    </script>
+                    <asp:Button ID="btnSubmit" runat="server" Text="Siguiente" CssClass="btn btn-primary" OnClick="btnSubmit_Click"/>
                 </form>
             </div>
         </div>

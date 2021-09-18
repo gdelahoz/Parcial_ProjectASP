@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Parcial_ProjectASP
 {
-    public partial class carrito : System.Web.UI.Page
+    public partial class company : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -27,7 +27,7 @@ namespace Parcial_ProjectASP
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            Response.Redirect("encuesta.aspx");
+            Response.Redirect("carrito.aspx");
         }
     }
 }

@@ -16,7 +16,7 @@ namespace Parcial_ProjectASP
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            Response.Redirect("carrito.aspx");
+            Response.Redirect("company.aspx");
         }
     }
 }

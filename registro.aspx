@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <title>Registrate</title>
+        <title>📚 Registrate</title>
     <!-- Font Awesome -->
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
@@ -31,7 +31,7 @@
             <div class="card-body p-4">
                 <form id="form1" runat="server">
                     <h5 class="mb-2">Mi cuenta</h5>
-                    <p>Sí ya eres nuestro cliente inicia sesión.</p>
+                    <p>Ingresa todos tus datos para registrarte.</p>
                     <div class="row mb-4">
                         <div class="col">
                             <!-- Nombre -->
@@ -83,7 +83,7 @@
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtCPassword" ErrorMessage="Campo requerido" ForeColor="Red"></asp:RequiredFieldValidator>
                     </p>
 
-                    <asp:Button ID="btnSubmit" runat="server" Text="Ingresar" CssClass="btn btn-primary mb-4 btn-block"/>
+                    <asp:Button ID="btnSubmit" runat="server" Text="Registrarse" CssClass="btn btn-primary mb-4 btn-block" OnClick="btnSubmit_Click"/>
                     <div class="text-center">
                         <p>¿Ya eres miembro? <a href="index.aspx">Iniciar sesión</a></p>
                     </div>

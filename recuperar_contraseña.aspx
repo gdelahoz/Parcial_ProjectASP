@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <title>Recuperar mi contraseña</title>
+        <title>📚 Recuperar mi contraseña</title>
     <!-- Font Awesome -->
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
@@ -40,7 +40,7 @@
                     <p style="font-size: 12px;">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtEmail" ErrorMessage="Campo requerido" ForeColor="Red"></asp:RequiredFieldValidator>
                     </p>
-                    <asp:Button ID="btnSubmit" runat="server" Text="Siguiente" CssClass="btn btn-primary mb-4 btn-block"/>
+                    <asp:Button ID="btnSubmit" runat="server" Text="Siguiente" CssClass="btn btn-primary mb-4 btn-block" OnClick="btnSubmit_Click"/>
                 </form>
                 <div class="text-center">
                     <p>¿Ya recordaste? <a href="index.aspx">Inicia sesión</a></p>

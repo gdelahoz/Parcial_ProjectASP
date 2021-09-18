@@ -1,11 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="tienda.aspx.cs" Inherits="Parcial_ProjectASP.WebForm4" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="carrito.aspx.cs" Inherits="Parcial_ProjectASP.carrito" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <title>📚 Tienda en linea</title>
+        <title>📚 Carrito y factura</title>
     <!-- Font Awesome -->
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
@@ -40,10 +40,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="WebForm1.aspx">Tienda</a>
+              <a class="nav-link" aria-current="page" href="tienda.aspx">Tienda</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Carrito.aspx">Carrito</a>
+              <a class="nav-link active" href="carrito.aspx">Carrito</a>
             </li>
           </ul>
         </div>
@@ -56,9 +56,9 @@
             </div>
             <div class="card-body p-4">
                 <form id="form1" runat="server">
-                    <h5 class="mb-2">Libros</h5>
+                    <h5 class="mb-2">Factura</h5>
                     <p>Puedes comprar el siguiente libro</p>
-                    <asp:Button ID="btnSubmit" runat="server" Text="Comprar" CssClass="btn btn-primary mb-4 btn-block" OnClick="btnSubmit_Click"/>
+                    <asp:Button ID="btnSubmit" runat="server" Text="Comprar" CssClass="btn btn-primary mb-4 btn-block"/>
                 </form>
             </div>
         </div>

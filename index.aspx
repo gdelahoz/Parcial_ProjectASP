@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <title>Iniciar sesión</title>
+        <title>📚 Iniciar sesión</title>
     <!-- Font Awesome -->
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
@@ -51,7 +51,7 @@
                     <div class="mb-3">
                         <a href="recuperar_contraseña.aspx">Olvidé mi contraseña</a>
                     </div>
-                    <asp:Button ID="btnSubmit" runat="server" Text="Ingresar" CssClass="btn btn-primary mb-4 btn-block"/>
+                    <asp:Button ID="btnSubmit" runat="server" Text="Ingresar" CssClass="btn btn-primary mb-4 btn-block" OnClick="btnSubmit_Click"/>
                 </form>
                 <div class="text-center">
                     <p>¿No eres miembro? <a href="registro.aspx">Registrate</a></p>

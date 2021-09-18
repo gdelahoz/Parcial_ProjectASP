@@ -11,7 +11,7 @@ namespace Parcial_ProjectASP
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Page.UnobtrusiveValidationMode = System.Web.UI.UnobtrusiveValidationMode.None;
         }
     }
 }
